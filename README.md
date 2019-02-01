@@ -1,22 +1,6 @@
 <h1 align="center">
-<img width="40" valign="bottom" src="https://angular.io/assets/images/logos/angular/angular.svg">
-Angular Pro: Final App Seed
+Tracker
 </h1>
-<h4 align="center">Seed app for fitness manager application using Angular v4+ and AngularFire2.</h4>
-
----
-
-<a href="https://ultimateangular.com" target="_blank"><img src="https://ultimateangular.com/assets/img/banners/ua-github.svg"></a>
-
----
-
-> This repo serves as the seed project for the Ultimate Angular Pro course as well as the final solution in a separate branch, come and [learn advanced Angular](https://ultimateangular.com/courses/) architecture!
-
-[Setup and install](#setup-and-install) |
-[Tasks](#tasks) |
-[Snippets](#snippets) |
-[Firebase Config](#firebase-config) |
-[Resources](#resources)
 
 ## Setup and install
 
@@ -33,10 +17,8 @@ That's about it for tooling you'll need to run the project, let's move onto the 
 
 #### Project installation and server
 
-Now you've pulled down the repo and have everything setup, using the terminal you'll need to `cd` into the directory that you cloned the repo into and run some quick tasks:
 
 ```
-cd <angular-pro-app>
 yarn install
 # OR
 npm install
@@ -158,87 +140,3 @@ Here are some [VSCode](https://code.visualstudio.com) snippets I'm using whilst 
   }
 }
 ```
-
-## Firebase Config
-
-#### database.rules.json
-
-```
-{
-  "rules": {
-    "users": {
-      "$uid": {
-        ".read": "$uid === auth.uid",
-        ".write": "$uid === auth.uid"
-      }
-    },
-    "schedule": {
-      "$uid": {
-        ".read": "$uid === auth.uid",
-        ".write": "$uid === auth.uid",
-        ".indexOn": [
-          "timestamp"
-        ]
-      }
-    },
-    "meals": {
-      "$uid": {
-        ".read": "$uid === auth.uid",
-        ".write": "$uid === auth.uid"
-      }
-    },
-    "workouts": {
-      "$uid": {
-        ".read": "$uid === auth.uid",
-        ".write": "$uid === auth.uid"
-      }
-    }
-  }
-}
-```
-
-#### firebase.json
-
-```
-{
-  "database": {
-    "rules": "database.rules.json"
-  },
-  "hosting": {
-    "public": "",
-    "ignore": [
-      "firebase.json",
-      ".firebaserc",
-      ".vscode",
-      ".git",
-      ".gitignore",
-      ".editorconfig",
-      "src/**/.*",
-      "database.rules.json",
-      "package.json",
-      "README.md",
-      "tsconfig.json",
-      "webpack.config.js",
-      "yarn.lock",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }
-}
-```
-
-## Resources
-
-There are several resources used inside this project, of which you can read further about to dive deeper or understand in more detail what they are:
-
-* [Angular](https://angular.io)
-* [Firebase Docs](https://firebase.google.com/docs/)
-* [Firebase CLI](https://firebase.google.com/docs/cli/)
-* [AngularFire2 Repo/Docs](https://github.com/angular/angularfire2)
-* [npm](https://www.npmjs.com/)
-* [Webpack](https://webpack.js.org/)
