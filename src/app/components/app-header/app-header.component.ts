@@ -8,7 +8,6 @@ import { Component, Output, EventEmitter, Input, ChangeDetectionStrategy } from 
 	template: `
 		<div class="app-header">
 			<div class="wrapper">
-				<img src="/img/logo.svg">
 				<div class="app-header__user-info" *ngIf="user?.authenticated">
 					<span (click)="logoutUser()"></span>
 				</div>
